@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { FilterPipe} from './pipes/filter.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { HomeListingComponent } from './components/home-listing/home-listing.component';
 import { ListingDetailsComponent } from './components/listing-details/listing-details.component';
 
@@ -16,7 +17,7 @@ import { ListingDetailsComponent } from './components/listing-details/listing-de
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
+    AppRoutingModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

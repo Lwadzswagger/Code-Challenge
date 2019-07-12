@@ -1,10 +1,3 @@
-<input [(ngModel)]="searchText" placeholder="search text goes here">
-<ul>
-  <li *ngFor="let char of characters | filter : searchText">
-    <div *ngIf="char === 'no match'|| char === 'undefined' || char === null" ><h1>No Matching results found...</h1></div>
-    {{char}}
-  </li>
-</ul>
- 
+
 
 <router-outlet></router-outlet>
