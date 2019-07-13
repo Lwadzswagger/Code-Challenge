@@ -18,11 +18,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeListingComponent } from './components/home-listing/home-listing.component';
 import { ListingDetailsComponent } from './components/listing-details/listing-details.component';
 import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CreateListingComponent } from './components/create-listing/create-listing.component';
+import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, FilterPipe, HomeListingComponent, ListingDetailsComponent, LoginComponent
+    AppComponent, FilterPipe, HomeListingComponent, ListingDetailsComponent, LoginComponent, NavbarComponent, FooterComponent, CreateListingComponent, CreateProfileComponent
   ],
   imports: [
     BrowserModule,
