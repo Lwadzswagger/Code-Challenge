@@ -1,55 +1,182 @@
- 
-<!-- <input [(ngModel)]="searchText" placeholder="search text goes here"> -->
-<input class="bg-white focus:outline-0 focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" [(ngModel)]="searchText" placeholder="search text goes here">
-
- <br>
- <br>
-
-<!-- <div  *ngFor="let element of listingData | filter : searchText" >
-  
-  <div class="card">
-  </div>
-
-  <div class="flex flex-wrap"> 
-      <div class="   mb-4 rounded overflow-hidden shadow-lg">
-    <img class="w-full" src="{{element.picture}}" alt="">
-
-    <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
-      <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">House in Sandton</div>
-        <p class="text-gray-700 text-base">
-            {{element.slug}}         
-          </p>
-      </div>
-      <div class="px-6 py-4">
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{element.category}}</span>
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{element.isActive}}</span>
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">{{element.price}}</span>
-      </div>
+<nav  style="background-color: #667eea">
+  <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+    <a style="color: #ffffff" class="font-bold text-2xl lg:text-4xl" href="#">
+      THRIFT YARD
+    </a>
+    <div class="block lg:hidden">
+      <button
+        class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
     </div>
-  </div>
-</div> -->
-
-<div class="flex flex-wrap -mx-2"  >
-    <div *ngFor="let element of listingData | filter : searchText; let i = index" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-2 mb-4">
-      <div  class="max-w-sm rounded overflow-hidden shadow-lg">
-          <img class="w-full" src=" https://picsum.photos/id/23{{i}}/200/300" alt="Sunset in the mountains">
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">  {{element.email}} </div>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div class="px-6 py-4">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#photography</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#travel</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#winter</span>
-          </div>
+    <div class="hidden lg:block">
+      <ul class="inline-flex">
+        <!-- <li>
+            <input
+            class="bg-white focus:outline-0 focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal"
+            [(ngModel)]="searchText" placeholder="search text goes here">
+        </!-->  
+        <li>
+          <a class="px-4 font-bold" href="/">Home</a>
+        </li>
+        <li>
+          <a class="px-4 hover:text-gray-800" href="#">About</a>
+        </li>
+        <li>
+          <a class="px-4 hover:text-gray-800" href="#">Contact</a>
+        </li>
+        <div>
+          <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">login</a>
         </div>
+      </ul>
     </div>
-    <!-- <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-gray-400"></div>
-    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-gray-500"></div>
-    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-gray-400"></div>
-    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/6 mb-4 bg-gray-500"></div>
-    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/6 mb-4 bg-gray-400"></div> -->
   </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+<!-- <input [(ngModel)]="searchText" placeholder="search text goes here"> -->
+
+
+<br>
+<br>
+<div class="container">
+  <div class="  flex flex-wrap -mx-2">
+    <div *ngFor="let element of listingData | filter : searchText; let i = index"
+      class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-2 mb-4">
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full" src=" https://picsum.photos/id/23{{i}}/200/300" alt="Sunset in the mountains">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2"> {{element.email}} </div>
+          <p class="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis
+            eaque, exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div class="px-6 py-4">
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#photography</span>
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#travel</span>
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#winter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="bg-gray-100">
+  <div class="container mx-auto px-6 py-20">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+      Testimonials
+    </h2>
+    <div class="flex flex-wrap">
+      <div class="w-full md:w-1/3 px-2 mb-4">
+        <div class="bg-white rounded shadow py-2">
+          <p class="text-gray-800 text-base px-6 mb-5">Monitoring and tracking my health vitals anywhere I go and on any
+            platform I use has never been easier.</p>
+          <p class="text-gray-500 text-xs md:text-sm px-6">John Doe</p>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 px-2 mb-4">
+        <div class="bg-white rounded shadow py-2">
+          <p class="text-gray-800 text-base px-6 mb-5">As an Athlete, this is the perfect product for me. I wear my
+            Smart Health Monitoring Wristwatch everywhere i go, even in the bathroom since it's waterproof.</p>
+          <p class="text-gray-500 text-xs md:text-sm px-6">Jane Doe</p>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 px-2 mb-4">
+        <div class="bg-white rounded shadow py-2">
+          <p class="text-gray-800 text-base px-6 mb-5">I don't regret buying this wearble gadget. One of the best
+            gadgets I own!.</p>
+          <p class="text-gray-500 text-xs md:text-sm px-6">James Doe</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background-color: #667eea">
+  <div class="container mx-auto px-6 text-center py-20">
+    <h2 class="mb-6 text-4xl font-bold text-center text-white">
+      Limited in Stock
+    </h2>
+    <h3 class="my-4 text-2xl text-white">
+      Get yourself the cheapest items while stocklast!
+    </h3>
+    <button class="bg-white font-bold rounded-full mt-6 py-4 px-8 shadow-lg uppercase tracking-wider">
+      Order
+    </button>
+  </div>
+</section>
+
+<footer class="bg-gray-100">
+  <div class="container mx-auto px-6 pt-10 pb-6">
+    <div class="flex flex-wrap">
+      <div class="w-full md:w-1/4 text-center md:text-left">
+        <h5 class="uppercase mb-6 font-bold">Links</h5>
+        <ul class="mb-4">
+          <li class="mt-2">
+            <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">FAQ</a>
+          </li>
+          <li class="mt-2">
+            <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Help</a>
+          </li>
+          <li class="mt-2">
+            <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Support</a>
+          </li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/4 text-center md:text-left">
+        <h5 class="uppercase mb-6 font-bold">Legal</h5>
+        <ul class="mb-4">
+          <li class="mt-2">
+            <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Terms</a>
+          </li>
+          <li class="mt-2">
+            <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Privacy</a>
+          </li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/4 text-center md:text-left">
+        <h5 class="uppercase mb-6 font-bold">Social</h5>
+        <ul class="mb-4">
+          <li class="mt-2">
+            <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Facebook</a>
+          </li>
+          <li class="mt-2">
+            <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Linkedin</a>
+          </li>
+          <li class="mt-2">
+            <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Twitter</a>
+          </li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/4 text-center md:text-left">
+        <h5 class="uppercase mb-6 font-bold">Company</h5>
+        <ul class="mb-4">
+          <li class="mt-2">
+            <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Official Blog</a>
+          </li>
+          <li class="mt-2">
+            <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">About Us</a>
+          </li>
+          <li class="mt-2">
+            <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
