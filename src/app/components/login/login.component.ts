@@ -20,21 +20,12 @@ export class LoginComponent implements OnInit {
   userForm: FormGroup;
   newUser = false; // to toggle login or signup form
   formErrors: FormErrors = {
-    // firstName: '',
-    // lastName: '',
+   
     email: '',
     password: ''
   };
 
   validationMessages = {
-    // firstName: {
-    //   required: 'Firstnmae is required.',
-    //   minlength: 'A Firstname must be a least 2 characters long or more'
-    // },
-    // lastname: {
-    //   required: 'Lastname is required.',
-    //   minlength: 'A Lastname must be a least 2 characters long or more'
-    // },
     email: {
       required: 'Email is required.',
       email: 'Email must be a valid email'
@@ -87,32 +78,23 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    console.log('form data', this.userForm.value);
-
-    // this.User.firstName = this.userForm.value.firstName;
-    // this.User.lastName = this.userForm.value.lastName;
-    this.User.email = this.userForm.value.email;
-    this.User.password = this.userForm.value.password;
-
-    console.log(this.User);
+    console.log('form data', this.userForm.value.email, this.userForm.value.password);
+ 
 
     this.authService.doRegister(
-      this.User
-    )
-      .then(res => {
-        console.log(res);
-        this.navigate();
-      }, err => {
-        console.log(err);
-      });
+      this.userForm.value.email, this.userForm.value.password
+    ).then(res => {
+      console.log(res);
+      this.navigate();
+    }, err => {
+      console.log(err);
+    });
   }
 
 
   buildForm() {
     this.userForm = this.fb.group({
-      // firstName: ['', [Validators.required, Validators.minLength(2)]],
-      // lastname: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
+         email: ['', [Validators.required, Validators.email]],
       password: [
         '',
         [
@@ -137,7 +119,7 @@ export class LoginComponent implements OnInit {
     for (const field in this.formErrors) {
       if (
         Object.prototype.hasOwnProperty.call(this.formErrors, field) &&
-        (  field === 'email' || field === 'password')
+        (field === 'email' || field === 'password')
       ) {
         // clear previous error message (if any)
         this.formErrors[field] = '';

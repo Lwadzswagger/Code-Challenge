@@ -14,9 +14,9 @@ export class AuthService {
 
 
 
-  doRegister(User: { email: string, password: string }) {
+  doRegister(email, password) {
     return new Promise<any>((resolve, reject) => {
-      firebase.auth().createUserWithEmailAndPassword(User.email, User.password) 
+      firebase.auth().createUserWithEmailAndPassword( email, password)
         .then(res => {
           resolve(res);
         }, err => reject(err));
