@@ -1,3 +1,4 @@
+import { ListingService } from './../../services/listing.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listing-details.component.sass']
 })
 export class ListingDetailsComponent implements OnInit {
-
-  constructor() { }
+item;
+  constructor(
+    public listingServices: ListingService,
+  ) { }
 
   ngOnInit() {
+this.item = this.listingServices.selectedItem;
   }
 
 }
