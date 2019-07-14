@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ListingService {
-
+selectedItem;
   baseUrl = '../../mockdata/listingData.json';
   constructor(
     public http: HttpClient

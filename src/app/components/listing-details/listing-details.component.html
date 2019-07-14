@@ -1,3 +1,42 @@
-<p>
-  listing-details works!
-</p>
+<navbar></navbar>
+
+
+<<<<<<< HEAD
+<div class="conatainer" *ngIf="!item">
+  <img src="./../../../assets/img/spinner.svg" class="h-40 w-full" alt="loading">
+</div>
+
+<div *ngIf="item" class="w-full  px-6 py-12 text-left bg-gray-300 text-gray-700 leading-normal">
+=======
+<div class="conatainer" *ngIf="!item" > 
+<img src="./../../../assets/img/spinner.svg" class="h-40 w-full"  alt="loading">
+</div>
+
+<div *ngIf="item"  class="w-full  px-6 py-12 text-left bg-gray-300 text-gray-700 leading-normal">
+>>>>>>> listandviewMoreDeatail
+  <div class="container max-w-4xl mx-auto flex justify-center flex-wrap md:flex-no-wrap">
+
+    <div class="w-full md:w-2-3 pt-10 md:px-6 md:pt-0">
+      <img src="{{item.picture}}" class="w-full h-auto" />
+    </div>
+
+    <div class="w-full md:w-1-3">
+      <h3 class="text-3xl mb-8 text-black leading-tight">
+        <span class="text-indigo-500 capitalize"> Product Name: </span> {{item.name}}
+      </h3>
+      <p class="text-indigo-500">Price: </p> {{item.price}} <br>
+      <p class="text-indigo-500"> Posted by:</p> {{item.email}}
+      <p class="text-indigo-500"> Cell:</p> {{item.phone}}
+      <p class="text-indigo-500">Location: </p> {{item.address}} <br>
+      <p class="text-indigo-500">Date posted: </p> {{item.registered}}
+      <p class="text-indigo-500 mb-2">Product Description: </p>
+
+      <p class="mb-10">{{item.slug}}</p><br>
+
+
+    </div>
+
+
+
+  </div>
+</div>
