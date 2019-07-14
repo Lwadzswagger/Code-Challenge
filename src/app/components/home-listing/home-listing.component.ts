@@ -11,11 +11,16 @@ export class HomeListingComponent implements OnInit {
   title = 'Code-Challenge';
   searchText;
   listingData = data;
+  category: any = [];
+
   constructor(
     public listingService: ListingService
   ) { }
 
   ngOnInit() {
+    this.category = this.listingData.categories;
+    console.log(this.listingData.categories);
+    
     // this.listingService.getData()      .subscribe(res => console.log('home page', this.listingData = res));
   }
 
