@@ -22,10 +22,12 @@ const routes: Routes = [
   {
     path: 'auth',
     component: LoginComponent
-  },{
+  },
+  {
     path: 'createAd',
     component: CreateListingComponent
-  },{
+  },
+  {
     path: 'create-Profile',
     component: CreateProfileComponent
   },
