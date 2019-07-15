@@ -1,37 +1,17 @@
-<div class=" container mx-auto mt-4 px-4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       col-md-10">
-  <input class="image-input h-32 w-32 border-dashed border-4 border-indigo-600 rounded form-control" (change)="profileDetect($event)" id="ad-picture" type="file" required>
-
-  <div class=" relative mt-15 text-indigo-500 display-flex">
-    <i class="m-auto fa fa-plus-circle"></i>
-  </div>
-
-  <div [style.opacity]="adDetails.adPictureURL!==undefined ? '1' : '0'" class="image-preview">
-    <img src="{{adDetails.adPictureURL}}" alt="image preview...">
-  </div>
-
-  <div *ngIf="adPicture" class="shadow w-1/2 bg-grey-light">
-    <div class="bg-green-300 text-xs leading-none py-1 text-center text-white"></div>
-    <p>{{adPicture?.name}} | {{adPicture?.progress | number}}% Complete</p>
-  </div>
+<!-- <div class="mb-5 mt-8">
+  <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="price">
+    Product price</label>
+  <input
+    class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+    id="price" type="text" required [(ngModel)]="adDetails.name" placeholder="$2 000.99">
 </div>
-
-
-
-
 <div class="mb-5 mt-8">
-    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="price">
-      Product price</label>
-    <input
-      class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"
-      id="price" type="text" required [(ngModel)]="adDetails.name" placeholder="$2 000.99">
-  </div>
-  <div class="mb-5 mt-8">
-      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="price">
-        Product price</label>
-      <input
-        class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"
-        id="price" type="text" required [(ngModel)]="adDetails.price" placeholder="$2 000.99">
-    </div>
+  <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="price">
+    Product price</label>
+  <input
+    class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+    id="price" type="text" required [(ngModel)]="adDetails.price" placeholder="$2 000.99">
+</div>
 
 <div class=" mb-5">
 
@@ -64,10 +44,10 @@
 
 <div class="mt-10">
 
-  <div class="btn next"  (click)="createAd()">Create Ad
+  <div class="btn next" (click)="createAd()">Create Ad
     <i class="fa fa-arrow-right prefix grey-text"></i>
   </div>
-</div>
+</div> -->
 
 
 
@@ -76,60 +56,145 @@
 
 <div class="container p-10 w-full ">
   <form class="content-center w-full max-w-lsg">
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+
+
+
+    <div class="flex flex-wrap -mx-3 mb-2">
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="adName">
           Product Name
         </label>
-        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border bordser-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Spoon, Green chair">
-        <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="adName" type="text" required [(ngModel)]="adDetails.name" placeholder="BMW, VW Bettle, Kettle, etc.">
+
       </div>
-      <div class="w-full md:w-1/2 px-3">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-          Last Name
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+          Product Price
         </label>
-        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="adPrice" type="text" required [(ngModel)]="adDetails.price" placeholder="$34 00.90">
+      </div>
+
+
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+          Location
+        </label>
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="adLocation" type="text" required [(ngModel)]="adDetails.address"
+          placeholder="143 Holly Street, Gardiner, Delaware, 7580">
       </div>
     </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
+
+
+
+
+
+    <!-- <div
+      class=" container mx-auto mt-4 px-4 col-md-10">
+      <input class="image-input h-32 w-32 border-dashed border-4 border-indigo-600 rounded form-control"
+        (change)="profileDetect($event)" id="ad-picture" type="file" required>
+
+      <div class=" relative mt-15 text-indigo-500 display-flex">
+        <i class="m-auto fa fa-plus-circle"></i>
+      </div>
+
+      <div [style.opacity]="adDetails.adPictureURL!==undefined ? '1' : '0'" class="image-preview">
+        <img src="{{adDetails.adPictureURL}}" alt="image preview...">
+      </div>
+
+      <div *ngIf="adPicture" class="shadow w-64 bg-grey-light">
+
+        <p>{{adPicture?.name}} | {{adPicture?.progress | number}}% Complete</p>
+      </div>
+    </div> -->
+
+
+    <div class="md:flex-1 px-3 text-center">
+      <div class="button bg-indigo-300 hover:bg-indigo-400 text-cream-300 mx-auto cusor-pointer relative">
+        <input class="opacity-0 absolute pin-x pin-y" type="file" name="cover_image" (change)="profileDetect($event)"
+          id="ad-picture">
+        Add Ad Image
+      </div>
+      <div *ngIf="adPicture" class="shadow w-64 bg-grey-light">
+        <p>{{adPicture?.name}} | {{adPicture?.progress | number}}% Complete</p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="flex flex-wrap -mx-3 mb-2 mt-10">
       <div class="w-full px-3">
         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-          Password
+          Posted by
         </label>
-        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************">
-        <p class="textJane-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
       </div>
     </div>
+
+
     <div class="flex flex-wrap -mx-3 mb-2">
       <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-          City
+          Cell
         </label>
-        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Albuquerque">
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="phone" type="text" [(ngModel)]="adDetails.phone">
       </div>
-      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-          State
-        </label>
-        <div class="relative">
-          <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-            <option>New Mexico</option>
-            <option>Missouri</option>
-            <option>Texas</option>
-          </select>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-          </div>
-        </div>
-      </div>
+
+
       <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-          Zip
+          Email
         </label>
-        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210">
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="email" type="text" [disabled]="true" [(ngModel)]="adDetails.email">
       </div>
     </div>
-  </form>
-</div>
 
- 
+
+
+
+
+    <div class="md:flex mb-6">
+      <div class="md:w-1/3">
+        <legend class="uppercase tracking-wide text-sm">Description</legend>
+      </div>
+      <div class="md:flex-1 mt-2 mb:mt-0 md:px-3">
+        <textarea required [(ngModel)]="adDetails.slug" id="slug" class="w-full shadow rounded p-4 border-4"
+          placeholder="The most amazing product you can get your hands on." rows="6"></textarea>
+      </div>
+    </div>
+
+    <div class="md:flex mb-6 border border-t-1 border-b-0 border-x-0 border-cream-dark">
+      <div class="md:flex-1 px-3 text-center md:text-right">
+        <input type="hidden" name="sponsor" value="0">
+        <div class="button text-grey-300 bg-brick hover:bg-grey-700" type="submit" value="Create Location"></div>
+      </div>
+    </div>
+
+
+
+
+
+  </form>
+
+  <div class="mt-10">
+
+    <div class="button mx-auto text-center w-24 rounded text-gray-700 bg-indigo-400 next" (click)="createAd()">Create Ad
+      <i class="fa fa-arrow-right prefix grey-text"></i>
+    </div>
+  </div>
+
+</div>
