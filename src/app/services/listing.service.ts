@@ -39,7 +39,7 @@ export class ListingService {
     name: '',
     adPhotoUrl: '',
 
-  }
+  };
   baseUrl = '../../mockdata/listingData.json';
 
   private uploads: Observable<UploadFiles[]>;
@@ -57,20 +57,19 @@ export class ListingService {
 
 
   createAd(data: Ad) {
+data.adPictureURL = this.ad.adPhotoUrl;
+console.log('before send', data);
 
 
-    const createUserObj = {
 
-    };
-
-    return new Promise<any>((resolve, reject) => {
+return new Promise<any>((resolve, reject) => {
       this.firestore
-        .collection('ads')
-        .doc(data._id)
-        .set(createUserObj)
+        .collection('Ads')
+        // .doc('' + data._id)
+        .add(data)
         .then(res => {
           console.log('User created Successfully!!!');
-          this.router.navigateByUrl('/menu/first/home');
+          this.router.navigateByUrl('/listing');
         }, err => reject(err));
     });
   }
@@ -78,7 +77,7 @@ export class ListingService {
 
 
 
-
+// pull data as deales
   public getData() {
     return this.http.get<any[]>(`${this.baseUrl}`)
       .pipe(

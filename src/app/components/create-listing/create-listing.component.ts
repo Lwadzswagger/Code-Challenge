@@ -11,12 +11,12 @@ import { UploadFiles } from 'src/app/models/uploadFiles.model';
 export class CreateListingComponent implements OnInit {
 
   today: number = Date.now();
-
+  categories = ['Cars', 'Furniture', 'Property', 'Electronics'];
 
   adDetails = {
     name: '',
     adPictureURL: '',
-     _id: '',
+    _id: '',
     index: 2,
     Currency: 'Doller',
     slug: '',
@@ -29,7 +29,7 @@ export class CreateListingComponent implements OnInit {
     about: 'Officia incididunt minim ex elit magna commodo. Nulla minim laboris Lorem ut est laboris consectetur duis. Eiusmod aute esse aute tempor adipisicing magna nostrud eiusmod labore. Anim dolore excepteur sit labore duis ex nisi excepteur eiusmod proident.\r\n',
     // about: '',
     registered: this.today,
-    category: ''
+    category: ['']
   };
 
   adPicture: any;
@@ -63,7 +63,7 @@ export class CreateListingComponent implements OnInit {
       this.filePreview(event, 'store-pics');
       // push profile
       // if (this.adDetails.name) {
-        this.listingService.pushUpload(this.adPicture, 'Ad-Pictures', this.adDetails.name);
+      this.listingService.pushUpload(this.adPicture, 'Ad-Pictures', this.adDetails.name);
       // }
 
     } else {
@@ -71,6 +71,8 @@ export class CreateListingComponent implements OnInit {
     }
 
   }
+
+
 
   filePreview(event: any, fileType: string) {
     const reader = new FileReader();
@@ -90,11 +92,25 @@ export class CreateListingComponent implements OnInit {
     reader.readAsDataURL(event.target.files[0]);
   }
 
-createAd() {
-  console.log(this.adDetails);
 
-  this.listingService.createAd( this.adDetails);
-}
+
+  filterForeCategory(filterVal: any) {
+    console.log(filterVal);
+
+    if (filterVal === '0') {
+      this.adDetails.category = this.categories;
+    } else {
+      this.adDetails.category = filterVal;
+    }
+    console.log(this.adDetails.category);
+  }
+
+
+  addAPost() {
+    this.listingService.createAd(this.adDetails);
+    console.log('skipped?');
+
+  }
 
 
 }
