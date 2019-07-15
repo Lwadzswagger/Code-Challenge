@@ -10,6 +10,7 @@ import { UploadFiles } from 'src/app/models/uploadFiles.model';
 })
 export class CreateListingComponent implements OnInit {
 
+  uploading = true;
   today: number = Date.now();
   categories = ['Cars', 'Furniture', 'Property', 'Electronics'];
 
@@ -82,7 +83,7 @@ export class CreateListingComponent implements OnInit {
     reader.onload = (event: any) => {
       switch (fileType) {
         case 'Ad-Pictures': this.adDetails.adPictureURL = event.target.result;
-                            break;
+          break;
         default:
           break;
       }
@@ -108,8 +109,7 @@ export class CreateListingComponent implements OnInit {
 
   addAPost() {
     this.listingService.createAd(this.adDetails);
-    console.log('skipped?');
-
+    this.uploading = !this.uploading;
   }
 
 

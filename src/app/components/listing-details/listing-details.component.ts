@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listing-details.component.sass']
 })
 export class ListingDetailsComponent implements OnInit {
-item;
+  item;
   constructor(
     public listingServices: ListingService,
   ) { }
 
   ngOnInit() {
-this.item = this.listingServices.selectedItem;
+    this.item = this.listingServices.selectedItem;
   }
 
+
+  ontactSeller() {
+    window.alert('Thank you on your interest on this offer, The seller will get back to you ASAP')
+  }
 }
