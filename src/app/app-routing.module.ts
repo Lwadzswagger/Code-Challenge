@@ -1,3 +1,5 @@
+import { CreateProfileComponent } from './components/create-profile/create-profile.component';
+import { CreateListingComponent } from './components/create-listing/create-listing.component';
 import { AuthGuard } from './services/auth.guard';
 import { HomeListingComponent } from './components/home-listing/home-listing.component';
 import { NgModule } from '@angular/core';
@@ -20,6 +22,14 @@ const routes: Routes = [
   {
     path: 'auth',
     component: LoginComponent
+  },
+  {
+    path: 'createAd',
+    component: CreateListingComponent
+  },
+  {
+    path: 'create-Profile',
+    component: CreateProfileComponent
   },
 ];
 

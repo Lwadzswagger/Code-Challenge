@@ -22,17 +22,27 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreateListingComponent } from './components/create-listing/create-listing.component';
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 @NgModule({
   declarations: [
-    AppComponent, FilterPipe, HomeListingComponent, ListingDetailsComponent, LoginComponent, NavbarComponent, FooterComponent, CreateListingComponent, CreateProfileComponent
+    AppComponent,
+    FilterPipe,
+    HomeListingComponent,
+    ListingDetailsComponent,
+    LoginComponent,
+    NavbarComponent,
+    FooterComponent,
+    CreateListingComponent,
+    CreateProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularFireDatabaseModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,

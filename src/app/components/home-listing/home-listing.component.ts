@@ -21,7 +21,7 @@ export class HomeListingComponent implements OnInit {
 
   ngOnInit() {
     this.category = this.listingData.categories;
-    console.log(this.listingData.categories);
+    // console.log(this.listingData.categories);
 
     // this.listingService.getData()      .subscribe(res => console.log('home page', this.listingData = res));
   }
@@ -31,6 +31,9 @@ export class HomeListingComponent implements OnInit {
     console.log(item);
     this.router.navigateByUrl('details');
 
+  }
+  createAd(){
+    this.router.navigateByUrl('createAd')
   }
 
 }

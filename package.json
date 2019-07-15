@@ -2,12 +2,9 @@
   "name": "code-challenge",
   "version": "0.0.0",
   "scripts": {
-    "build:css": "postcss src/tailwind.css -o static/dist/tailwind.css",
-    "tailwind": "./node_modules/.bin/tailwind build ./src/tailwind.css -c ./tailwind.config.js -o ./src/styles.css",
-    "prestart": "ngtw build && npm run tailwind",
     "ng": "ng",
-    "start": "ng serve & ngtw watch",
-    "build": "ngtw build && ng build",
+    "start": "ng serve & ngtw watch ",
+    "build": " ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
