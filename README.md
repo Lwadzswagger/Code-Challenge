@@ -42,4 +42,4 @@ This project is build using Angular 7
 with TailwindCSS v1 (an amazing utility-first CSS framework).
 Firebase (Storage, Hosting, Cloud Firestore, Authentication).
 I used Gitflow to deliver features needed in the app.
-## This project takes the cake,  thats for all the hoops I had to jump just to get things looking the way I want the, and that might friend was very much fun. 
+## This project takes the cake,  thats for all the hoops I had to jump just to get things looking the way I want them to, and that might friend was very much fun. 
