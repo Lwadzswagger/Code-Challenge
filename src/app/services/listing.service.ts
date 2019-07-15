@@ -107,7 +107,7 @@ export class ListingService {
   pushUpload(upload: UploadFiles, basepath: string, adName: string) {
 
     const storageRef = firebase.storage().ref();
-    const uploadTask = storageRef.child(`${basepath}/${adName}/${upload.file.name}`).put(upload.file);
+    const uploadTask = storageRef.child(`${basepath}/${upload.file.name}`).put(upload.file);
 
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot: any) => {
