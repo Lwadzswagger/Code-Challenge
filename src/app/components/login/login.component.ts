@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
 
 
   signup() {
-    console.log('form data', this.userForm.value.email, this.userForm.value.password);
+    // console.log('form data', this.userForm.value.email, this.userForm.value.password);
 
     this.authService.doRegister(
       this.userForm.value.email, this.userForm.value.password

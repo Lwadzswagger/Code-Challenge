@@ -26,6 +26,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AboutComponent } from './components/about/about.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AuthGuard } from './services/auth.guard';
 
 
 @NgModule({
@@ -54,7 +55,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
