@@ -13,12 +13,10 @@ export class HomeListingComponent implements OnInit {
   searchText;
   listingData = data;
   category: any = [];
-  filterByCategory; 
-deals 
-  keywords = '';
-  cat = '';
- 
-
+filterByCategory;
+  deals;
+  cat;
+  keywords;
   categories = ['Cars', 'Furniture', 'Property', 'Electronics'];
 
 
