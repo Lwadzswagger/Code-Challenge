@@ -15,7 +15,8 @@ export class HomeListingComponent implements OnInit {
   category: any = [];
   filterByCategory;
 deals
-
+cat;
+keywords;
   categories = ['Cars', 'Furniture', 'Property', 'Electronics'];
 
 
