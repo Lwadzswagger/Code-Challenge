@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FilterPipe } from './pipes/filter.pipe';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,9 +11,11 @@ import { FilterPipe } from './pipes/filter.pipe';
 export class AppComponent {
 
 
+  public location = '' ;
   constructor(
+    private  router : Router
   ) {
-
+    this.location = router.url;
   }
 
 
