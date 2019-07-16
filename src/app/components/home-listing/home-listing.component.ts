@@ -13,10 +13,11 @@ export class HomeListingComponent implements OnInit {
   searchText;
   listingData = data;
   category: any = [];
-  filterByCategory;
+  filterByCategory; 
+deals 
   keywords = '';
   cat = '';
-
+ 
 
   categories = ['Cars', 'Furniture', 'Property', 'Electronics'];
 
@@ -27,7 +28,11 @@ export class HomeListingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.category = this.listingData.categories;
+    this.category = this.listingData.categories; 
+    this.listingService.getDeals().subscribe((res) => {
+        this.deals = res;
+        
+    }) ;
   }
 
   selectItem(item: any) {

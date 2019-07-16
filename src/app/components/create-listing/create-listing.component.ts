@@ -16,7 +16,7 @@ export class CreateListingComponent implements OnInit {
 
   adDetails = {
     name: '',
-    adPictureURL: '',
+    picture: '',
     _id: '',
     index: 2,
     Currency: 'Doller',
@@ -82,7 +82,7 @@ export class CreateListingComponent implements OnInit {
     // tslint:disable-next-line: no-shadowed-variable
     reader.onload = (event: any) => {
       switch (fileType) {
-        case 'Ad-Pictures': this.adDetails.adPictureURL = event.target.result;
+        case 'Ad-Pictures': this.adDetails.picture = event.target.result;
           // tslint:disable-next-line: align
           break;
         default:

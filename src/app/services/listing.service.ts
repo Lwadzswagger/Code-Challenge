@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 
 class Ad {
   name: any;
-  adPictureURL: any;
+  picture: any;
   // tslint:disable-next-line: variable-name
   _id: string;
   index: any;
@@ -40,11 +40,11 @@ export class ListingService {
     adPhotoUrl: '',
 
   };
-
+  dealsCollection = this.firestore.collection('Ads');
   userDisplayPhoto;
 
   baseUrl = '../../mockdata/listingData.json';
- 
+
 
   constructor(
     private af: AngularFireModule,
@@ -58,7 +58,7 @@ export class ListingService {
 
 
   createAd(data: Ad) {
-    data.adPictureURL = this.ad.adPhotoUrl;
+    data.picture = this.ad.adPhotoUrl;
 
 
 
@@ -74,6 +74,11 @@ export class ListingService {
     });
   }
 
+
+  getDeals() {
+    return this.dealsCollection.valueChanges();
+
+  }
 
 
 
