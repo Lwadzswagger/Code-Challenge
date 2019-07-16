@@ -1,22 +1,10 @@
 <div class="flex items-center h-screen w-full bg-indigo-600">
 
-  <div class="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
+  <div *ngIf="newUser"  class="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
     <h1 class="block w-full text-center text-grey-darkest mb-6">Sign Up</h1>
-    <form [formGroup]="userForm" *ngIf="!newUser" (ngSubmit)="login()"
+    <form [formGroup]="userForm" (ngSubmit)="login()"
       class="mb-4 md:flex md:flex-wrap md:justify-between">
-      <!-- <div class="flex flex-col mb-4 md:w-1/2">
-        <div *ngIf="formErrors.firstName" class="text-red-500">{{ formErrors.firstName }} </div>
-        <label class="mb-2 uppercase tracking-wide font-bold text-lg text-grey-darkest" for="firstName">First
-          Name</label>
-        <input formControlName="firstName" class="border py-2 px-3 text-grey-darkest md:mr-2" type="text"
-          name="firstName" id="firstName">
-      </div> -->
-      <!-- <div class="flex flex-col mb-4 md:w-1/2">
-        <div *ngIf="formErrors.lastName" class="text-red-500">{{ formErrors.lastName }} </div>
-        <label class="mb-2 uppercase font-bold text-lg text-grey-darkest md:ml-2" for="lastName">Last Name</label>
-        <input formControlName="lastName"  class="border py-2 px-3 text-grey-darkest md:ml-2" type="text" name="lastName"
-          id="lastName">
-      </div> -->
+    
       <div class="flex flex-col mb-4 md:w-full">
         <div *ngIf="formErrors.email" class="text-red-500">{{ formErrors.email }} </div>
         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="email">Email</label>
@@ -32,7 +20,37 @@
         class="block bg-indigo-600 hover:bg-indigo-900 text-white uppercase text-lg mx-auto p-4 rounded"
         type="submit">Create Account</button>
     </form>
+
+    
     <a class="block w-full text-center no-underline text-sm text-grey-dark hover:text-grey-darker"
       (click)="toggleForm()">Already have an account?</a>
   </div>
+
+
+  <div *ngIf="!newUser" class="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
+      <h1 class="block w-full text-center text-grey-darkest mb-6">Login</h1>
+      <form [formGroup]="userForm" (ngSubmit)="login()"
+        class="mb-4 md:flex md:flex-wrap md:justify-between">
+      
+        <div class="flex flex-col mb-4 md:w-full">
+          <div *ngIf="formErrors.email" class="text-red-500">{{ formErrors.email }} </div>
+          <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="email">Email</label>
+          <input formControlName="email" class="border py-2 px-3 text-grey-darkest" type="email" name="email" id="email">
+        </div>
+        <div class="flex flex-col mb-6 md:w-full">
+          <div *ngIf="formErrors.password" class="text-red-500"> {{ formErrors.password }} </div>
+          <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="password">Password</label>
+          <input formControlName="password" class="border py-2 px-3 text-grey-darkest" type="password" name="password"
+            id="password">
+        </div>
+        <button [disabled]="!userForm.valid" type="submit"
+          class="block bg-indigo-600 hover:bg-indigo-900 text-white uppercase text-lg mx-auto p-4 rounded"
+          type="submit">Login</button>
+      </form>
+  
+      
+      <a class="block w-full text-center no-underline text-sm text-grey-dark hover:text-grey-darker"
+        (click)="toggleForm()">Don't have an account?</a>
+    </div>
+
 </div>

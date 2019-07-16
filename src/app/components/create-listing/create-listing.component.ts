@@ -83,6 +83,7 @@ export class CreateListingComponent implements OnInit {
     reader.onload = (event: any) => {
       switch (fileType) {
         case 'Ad-Pictures': this.adDetails.adPictureURL = event.target.result;
+          // tslint:disable-next-line: align
           break;
         default:
           break;

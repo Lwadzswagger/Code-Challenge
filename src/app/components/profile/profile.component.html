@@ -1,0 +1,69 @@
+<navbar></navbar>
+
+<div class="container  p-10 w-full ">
+  <p class="text-5xl p-4 capitalize">Its time to know you more</p>
+
+  <form class="content-center w-full max-w-lsg">
+
+
+
+
+    <div class="md:flex-1 mb-10 px-3 text-center">
+      <div class="button bg-indigo-300 hover:bg-indigo-400 text-cream-300 mx-auto cusor-pointer relative">
+        <input class="opacity-0 absolute pin-x pin-y" type="file" name="cover_image" (change)="profileDetect($event)"
+          id="ad-picture">
+        Add Ad Image
+      </div>
+      <div *ngIf="adPicture" class="shadow w-64 bg-grey-light">
+        <p>{{UserPicture?.name}} | {{UserPicture?.progress | number}}% Complete</p>
+      </div>
+    </div>
+
+
+
+    <div class="flex flex-wrap -mx-3 mb-2">
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="adName">
+          full name
+        </label>
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="adName" type="text" name="name" required [(ngModel)]="user.name" placeholder="Jane Doe">
+      </div>
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="price">
+          cell Number
+        </label>
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="adPrice" type="text" name="price" required [(ngModel)]="user.phone" placeholder="+27 (71) 226 5436">
+      </div>
+
+
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="address">
+          Address
+        </label>
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="adLocation" type="text" required name="address" [(ngModel)]="user.address"
+          placeholder="143 Holly Street, Gardiner, Delaware, 7580">
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="md:flex p-10 mb-6   ">
+      <div class="md:flex-1 px-3 text-center md:text-right">
+        <button (click)="addProfile()" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
+          Create Profile
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

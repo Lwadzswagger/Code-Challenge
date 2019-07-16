@@ -40,10 +40,11 @@ export class ListingService {
     adPhotoUrl: '',
 
   };
-  baseUrl = '../../mockdata/listingData.json';
 
-  private uploads: Observable<UploadFiles[]>;
-  private uploadTask: firebase.storage.UploadTask;
+  userDisplayPhoto;
+
+  baseUrl = '../../mockdata/listingData.json';
+ 
 
   constructor(
     private af: AngularFireModule,
@@ -57,12 +58,11 @@ export class ListingService {
 
 
   createAd(data: Ad) {
-data.adPictureURL = this.ad.adPhotoUrl;
-console.log('before send', data);
+    data.adPictureURL = this.ad.adPhotoUrl;
 
 
 
-return new Promise<any>((resolve, reject) => {
+    return new Promise<any>((resolve, reject) => {
       this.firestore
         .collection('Ads')
         // .doc('' + data._id)
@@ -77,7 +77,7 @@ return new Promise<any>((resolve, reject) => {
 
 
 
-// pull data as deales
+  // pull data as deales
   public getData() {
     return this.http.get<any[]>(`${this.baseUrl}`)
       .pipe(
@@ -105,6 +105,7 @@ return new Promise<any>((resolve, reject) => {
 
   pushUpload(upload: UploadFiles, basepath: string, adName: string) {
 
+
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child(`${basepath}/${upload.file.name}`).put(upload.file);
 
@@ -122,12 +123,14 @@ return new Promise<any>((resolve, reject) => {
         if (uploadTask.snapshot.ref.getDownloadURL()) {
           uploadTask.snapshot.ref.getDownloadURL().then((url) => {
             this.ad.adPhotoUrl = url;
+            if (basepath === 'user-Pictures') {
+              this.userDisplayPhoto = url;
+            }
+
           });
           upload.name = upload.file.name;
 
-          // this.saveFileData(upload, `${basepath}/${storeName}`);
-          // console.log('download url for pic ',upload.url);
-          // console.log('file name',upload.name);
+
 
           console.log('File uploaded');
           return;

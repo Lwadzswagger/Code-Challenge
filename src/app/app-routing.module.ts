@@ -6,6 +6,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListingDetailsComponent } from './components/listing-details/listing-details.component';
 import { LoginComponent } from './components/login/login.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'listing', pathMatch: 'full' },
@@ -22,6 +25,18 @@ const routes: Routes = [
   {
     path: 'auth',
     component: LoginComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
+  },
+  {
+    path: 'contact',
+    component: ContactUsComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   },
   {
     path: 'createAd',
