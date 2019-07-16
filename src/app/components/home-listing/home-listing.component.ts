@@ -14,7 +14,7 @@ export class HomeListingComponent implements OnInit {
   listingData = data;
   category: any = [];
   filterByCategory;
-
+deals
 
   categories = ['Cars', 'Furniture', 'Property', 'Electronics'];
 
@@ -25,7 +25,11 @@ export class HomeListingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.category = this.listingData.categories;
+    this.category = this.listingData.categories; 
+    this.listingService.getDeals().subscribe((res) => {
+        this.deals = res;
+        
+    }) ;
   }
 
   selectItem(item: any) {
