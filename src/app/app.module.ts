@@ -23,6 +23,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CreateListingComponent } from './components/create-listing/create-listing.component';
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AboutComponent } from './components/about/about.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     NavbarComponent,
     FooterComponent,
     CreateListingComponent,
-    CreateProfileComponent
+    CreateProfileComponent,
+    AboutComponent,
+    ContactUsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
