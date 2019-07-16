@@ -13,7 +13,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 
 ## Live version
-Want to have a look of the code in action head over to [My Code Challenge](https://tailwindpowered.web.app/login) and enjoy
+Want to have a look of the code in action head over to [My Code Challenge](https://tailwindpowered.web.app/) and enjoy
 
  
 

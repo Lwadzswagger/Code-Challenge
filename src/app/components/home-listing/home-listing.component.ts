@@ -15,28 +15,29 @@ export class HomeListingComponent implements OnInit {
   category: any = [];
   filterByCategory;
 
+
   categories = ['Cars', 'Furniture', 'Property', 'Electronics'];
- 
 
-constructor(
-  public listingService: ListingService,
-  public router: Router
-) { }
 
-ngOnInit() {
-  this.category = this.listingData.categories;
-}
+  constructor(
+    public listingService: ListingService,
+    public router: Router
+  ) { }
 
-selectItem(item: any) {
-  this.listingService.selectedItem = item;
-  this.router.navigateByUrl('details');
-}
-createAd() {
-  this.router.navigateByUrl('createAd');
-}
+  ngOnInit() {
+    this.category = this.listingData.categories;
+  }
 
-// tslint:disable-next-line: no-shadowed-variable
-filterForeCategory(data: any) {
-  this.filterByCategory = data;
-}
+  selectItem(item: any) {
+    this.listingService.selectedItem = item;
+    this.router.navigateByUrl('details');
+  }
+  createAd() {
+    this.router.navigateByUrl('createAd');
+  }
+
+  // tslint:disable-next-line: no-shadowed-variable
+  filterForeCategory(data: any) {
+    this.filterByCategory = data;
+  }
 }
