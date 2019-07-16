@@ -62,13 +62,13 @@ export class LoginComponent implements OnInit {
   }
 
 
-  // signup(input) {
-  //   this.auth.emailSignUp(
-  //     this.userForm.value['email'],
-  //     this.userForm.value['password']
-  //   );
-  //   this.navigate();
-  // }
+  signup(input) {
+    this.authService.login(
+      this.userForm.value.email,
+      this.userForm.value.password
+    );
+    this.navigate();
+  }
 
 
 
@@ -84,8 +84,8 @@ export class LoginComponent implements OnInit {
     this.authService.doRegister(
       this.userForm.value.email, this.userForm.value.password
     ).then(res => {
-      console.log(res);
-      this.navigate();
+      // console.log(res);
+      // this.navigate();
     }, err => {
       console.log(err);
     });
