@@ -20,7 +20,6 @@ const routes: Routes = [
   {
     path: 'details',
     component: ListingDetailsComponent,
-    // canActivate: [AuthGuard]
   },
   {
     path: 'auth',
@@ -40,11 +39,15 @@ const routes: Routes = [
   },
   {
     path: 'createAd',
-    component: CreateListingComponent
+    component: CreateListingComponent,
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'create-Profile',
-    component: CreateProfileComponent
+    component: CreateProfileComponent,
+    canActivate: [AuthGuard]
+
   },
 ];
 
