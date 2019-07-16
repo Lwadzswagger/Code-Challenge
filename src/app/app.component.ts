@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FilterPipe } from './pipes/filter.pipe';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Code-Challenge';
+
+
+  public location = '' ;
+  constructor(
+    private  router : Router
+  ) {
+    this.location = router.url;
+  }
+
+
+
+
 }

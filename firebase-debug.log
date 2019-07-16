@@ -1,0 +1,235 @@
+[debug] [2019-07-15T23:16:59.011Z] ----------------------------------------------------------------------
+[debug] [2019-07-15T23:16:59.013Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jesse\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-07-15T23:16:59.013Z] CLI Version:   6.7.1
+[debug] [2019-07-15T23:16:59.014Z] Platform:      win32
+[debug] [2019-07-15T23:16:59.014Z] Node Version:  v8.11.3
+[debug] [2019-07-15T23:16:59.015Z] Time:          Tue Jul 16 2019 01:16:59 GMT+0200 (South Africa Standard Time)
+[debug] [2019-07-15T23:16:59.015Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-15T23:16:59.035Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-15T23:16:59.035Z] > authorizing via signed-in user
+[debug] [2019-07-15T23:16:59.035Z] [iam] checking project tailwindpowered for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2019-07-15T23:16:59.037Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/tailwindpowered:testIamPermissions  
+
+[debug] [2019-07-15T23:17:01.377Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T23:17:01.383Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/tailwindpowered  
+ 
+[debug] [2019-07-15T23:17:02.059Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'tailwindpowered'...
+[info] 
+[info] i  deploying database, storage, firestore, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-07-15T23:17:02.066Z] >>> HTTP REQUEST PUT https://tailwindpowered.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2019-07-15T23:17:03.170Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database tailwindpowered is valid
+[debug] [2019-07-15T23:17:03.172Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/tailwindpowered  
+ 
+[debug] [2019-07-15T23:17:05.683Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2019-07-15T23:17:05.686Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/tailwindpowered:test  
+
+[debug] [2019-07-15T23:17:06.883Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[info] i  firestore: reading indexes from firestore.indexes.json...
+[debug] [2019-07-15T23:17:06.891Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/tailwindpowered:test  
+
+[debug] [2019-07-15T23:17:07.853Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2019-07-15T23:17:07.857Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/tailwindpowered/versions  
+
+[debug] [2019-07-15T23:17:11.876Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2019-07-15T23:17:11.879Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/tailwindpowered/rulesets  
+
+[debug] [2019-07-15T23:17:13.098Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T23:17:13.099Z] [rules] created ruleset projects/tailwindpowered/rulesets/33b37afd-5f75-4f1b-a6c3-e8740d62ecf8
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2019-07-15T23:17:13.109Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/tailwindpowered/rulesets  
+
+[debug] [2019-07-15T23:17:13.110Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/tailwindpowered/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2019-07-15T23:17:14.274Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T23:17:14.274Z] [rules] created ruleset projects/tailwindpowered/rulesets/187ecfb6-f3bb-473f-a979-11dd10efdaf1
+[debug] [2019-07-15T23:17:14.791Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T23:17:14.792Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/tailwindpowered/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2019-07-15T23:17:16.236Z] <<< HTTP RESPONSE 200
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully
+[info] i  hosting[tailwindpowered]: beginning deploy...
+[info] i  hosting[tailwindpowered]: found 32 files in dist/Code-Challenge
+[debug] [2019-07-15T23:17:16.268Z] [hosting] hash cache [ZGlzdFxDb2RlLUNoYWxsZW5nZQ] not populated
+[debug] [2019-07-15T23:17:18.093Z] [hosting] hash cache [ZGlzdFxDb2RlLUNoYWxsZW5nZQ] stored for 32 files
+[debug] [2019-07-15T23:17:18.093Z] [hosting][hash queue][FINAL]
+[debug] [2019-07-15T23:17:18.094Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/tailwindpowered/versions/b9a87288c13b845c:populateFiles  
+ <request body omitted>
+[debug] [2019-07-15T23:17:20.863Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T23:17:20.889Z] [hosting][populate queue][FINAL]
+[debug] [2019-07-15T23:17:20.889Z] [hosting] uploads queued: 32
+[debug] [2019-07-15T23:17:52.996Z] [uploadQueue] Retrying task db3779295bf6b6db88c7f7b367b73d27f5f1fc99e7f5dcc745e2851d522c44ad
+[debug] [2019-07-15T23:18:24.647Z] [uploadQueue] Retrying task 3f0baa97a0cb7f5eb1973c9fdd9890794eb9368f4855612d688dc0f7bf3de2dc
+[debug] [2019-07-15T23:18:43.558Z] [uploadQueue] Retrying task b92449c12e5a08fc974c42ebcab973e08e4d411bf746f160d192a98596e73c58
+[debug] [2019-07-15T23:19:37.808Z] [uploadQueue] Retrying task b92449c12e5a08fc974c42ebcab973e08e4d411bf746f160d192a98596e73c58
+[debug] [2019-07-15T23:20:19.545Z] [uploadQueue] Retrying task a3763fa7c7f34b63aa4304207465ae51bed353c0e0351ea9c253104cdc8225c5
+[debug] [2019-07-15T23:20:20.268Z] [uploadQueue] Retrying task f0dc7ee4cc3cd01c30d9b5c3b01f7e3c73e4af8d01c9206e7b540f58fa55e2af
+[debug] [2019-07-15T23:20:20.648Z] [uploadQueue] Retrying task 726f57badf09a23a302e6b9fbe6cb4339091a6dfd328f5c7c2167a35ebf2b7de
+[debug] [2019-07-15T23:20:38.191Z] [uploadQueue] Retrying task f0dc7ee4cc3cd01c30d9b5c3b01f7e3c73e4af8d01c9206e7b540f58fa55e2af
+[debug] [2019-07-15T23:21:22.637Z] [uploadQueue] Retrying task 119fb1263d99dff20580293b97009be5798c621f4b812449d07d46142b232ded
+[debug] [2019-07-15T23:21:48.395Z] [uploadQueue] Retrying task db3779295bf6b6db88c7f7b367b73d27f5f1fc99e7f5dcc745e2851d522c44ad
+[debug] [2019-07-15T23:21:54.921Z] [uploadQueue] Retrying task 247513fb29dfe4eeb0f88c1875c734b4fd0e5337e2073140ef3a9e85fb5c1ac1
+[debug] [2019-07-15T23:22:02.714Z] [uploadQueue] Retrying task f485cc1675e103e959c2b74ac134f44d1e560a6afcbebf4c053474047189c180
+[debug] [2019-07-15T23:22:30.085Z] [uploadQueue] Retrying task 09e4093e3f713fe0b7ace4e10f56ba84a53ed2603d61541da64324ec3b83b9b4
+[debug] [2019-07-15T23:22:47.323Z] [uploadQueue] Retrying task 119fb1263d99dff20580293b97009be5798c621f4b812449d07d46142b232ded
+[debug] [2019-07-15T23:23:45.307Z] [uploadQueue] Retrying task 1bb314bb8ea8fcd422b3572e587ee98b218ef8e8f470c9f7b2cbd86bd42bf073
+[debug] [2019-07-15T23:24:05.114Z] [uploadQueue] Retrying task db3779295bf6b6db88c7f7b367b73d27f5f1fc99e7f5dcc745e2851d522c44ad
+[debug] [2019-07-15T23:24:17.722Z] [uploadQueue] Retrying task 726f57badf09a23a302e6b9fbe6cb4339091a6dfd328f5c7c2167a35ebf2b7de
+[debug] [2019-07-15T23:24:30.020Z] [uploadQueue] Retrying task f485cc1675e103e959c2b74ac134f44d1e560a6afcbebf4c053474047189c180
+[debug] [2019-07-15T23:24:31.896Z] [uploadQueue] Retrying task 266aa2918685e5441e712522f88393be8adbeec15c626f1bbfdce0981f45d989
+[debug] [2019-07-15T23:25:10.011Z] [uploadQueue] Retrying task b92449c12e5a08fc974c42ebcab973e08e4d411bf746f160d192a98596e73c58
+[debug] [2019-07-15T23:25:40.504Z] [uploadQueue] Retrying task db3779295bf6b6db88c7f7b367b73d27f5f1fc99e7f5dcc745e2851d522c44ad
+[debug] [2019-07-15T23:25:41.481Z] [uploadQueue] Retrying task 8a478b9c94ed77e8a1569db4c06fb4ab9bef388510ec1dc2a6d6ed925d06e25b
+[debug] [2019-07-15T23:25:47.466Z] [uploadQueue] Retrying task bb555f730ee2ea73df1bbfbcc26e036e230caaf6c5d20e9ce06112c7c435f249
+[debug] [2019-07-15T23:26:04.433Z] [uploadQueue] Retrying task b92449c12e5a08fc974c42ebcab973e08e4d411bf746f160d192a98596e73c58
+[debug] [2019-07-15T23:26:25.413Z] [uploadQueue] Retrying task f485cc1675e103e959c2b74ac134f44d1e560a6afcbebf4c053474047189c180
+[debug] [2019-07-15T23:26:55.451Z] [uploadQueue] Retrying task 75145b7e5373efa03ce38a718fd3e1a52353c42d5f62c897041d8a278a81b788
+[debug] [2019-07-15T23:27:03.541Z] [uploadQueue] Retrying task 0fddeeb1305e1448195a07c08f4122babd875a3ba3af80d5a91e9f43d86cebe2
+[debug] [2019-07-15T23:27:17.412Z] [uploadQueue] Retrying task 75145b7e5373efa03ce38a718fd3e1a52353c42d5f62c897041d8a278a81b788
+[debug] [2019-07-15T23:27:22.196Z] [uploadQueue] Retrying task 8a478b9c94ed77e8a1569db4c06fb4ab9bef388510ec1dc2a6d6ed925d06e25b
+[debug] [2019-07-15T23:27:46.755Z] [uploadQueue] Retrying task 1bb314bb8ea8fcd422b3572e587ee98b218ef8e8f470c9f7b2cbd86bd42bf073
+[debug] [2019-07-15T23:27:48.153Z] [uploadQueue] Retrying task 119fb1263d99dff20580293b97009be5798c621f4b812449d07d46142b232ded
+[debug] [2019-07-15T23:27:50.362Z] [uploadQueue] Retrying task 247513fb29dfe4eeb0f88c1875c734b4fd0e5337e2073140ef3a9e85fb5c1ac1
+[debug] [2019-07-15T23:27:51.737Z] [uploadQueue] Retrying task b92449c12e5a08fc974c42ebcab973e08e4d411bf746f160d192a98596e73c58
+[debug] [2019-07-15T23:27:52.448Z] [uploadQueue] Retrying task 726f57badf09a23a302e6b9fbe6cb4339091a6dfd328f5c7c2167a35ebf2b7de
+[debug] [2019-07-15T23:27:58.877Z] [uploadQueue] Retrying task f485cc1675e103e959c2b74ac134f44d1e560a6afcbebf4c053474047189c180
+[debug] [2019-07-15T23:27:58.985Z] [uploadQueue] Retrying task db3779295bf6b6db88c7f7b367b73d27f5f1fc99e7f5dcc745e2851d522c44ad
+[debug] [2019-07-15T23:28:04.703Z] [uploadQueue] Retrying task a3763fa7c7f34b63aa4304207465ae51bed353c0e0351ea9c253104cdc8225c5
+[debug] [2019-07-15T23:28:06.755Z] [uploadQueue] Retrying task 8a478b9c94ed77e8a1569db4c06fb4ab9bef388510ec1dc2a6d6ed925d06e25b
+[debug] [2019-07-15T23:28:43.729Z] [uploadQueue] Retrying task 119fb1263d99dff20580293b97009be5798c621f4b812449d07d46142b232ded
+[debug] [2019-07-15T23:28:49.068Z] [uploadQueue] Retrying task 09e4093e3f713fe0b7ace4e10f56ba84a53ed2603d61541da64324ec3b83b9b4
+[debug] [2019-07-15T23:28:51.019Z] [uploadQueue] Retrying task bb555f730ee2ea73df1bbfbcc26e036e230caaf6c5d20e9ce06112c7c435f249
+[debug] [2019-07-15T23:29:07.115Z] [uploadQueue] Retrying task b942f0f696973d97058795631df339ac88ba2829fb9f6645a19d081da5831125
+[debug] [2019-07-15T23:29:37.637Z] [uploadQueue] Retrying task f485cc1675e103e959c2b74ac134f44d1e560a6afcbebf4c053474047189c180
+[debug] [2019-07-15T23:29:43.090Z] [uploadQueue] Retrying task 266aa2918685e5441e712522f88393be8adbeec15c626f1bbfdce0981f45d989
+[debug] [2019-07-15T23:29:55.033Z] [uploadQueue] Retrying task 726f57badf09a23a302e6b9fbe6cb4339091a6dfd328f5c7c2167a35ebf2b7de
+[debug] [2019-07-15T23:30:11.720Z] [uploadQueue] Retrying task 266aa2918685e5441e712522f88393be8adbeec15c626f1bbfdce0981f45d989
+[debug] [2019-07-15T23:30:27.643Z] [uploadQueue] Retrying task f0dc7ee4cc3cd01c30d9b5c3b01f7e3c73e4af8d01c9206e7b540f58fa55e2af
+[debug] [2019-07-15T23:30:39.090Z] [uploadQueue] Retrying task 1bb314bb8ea8fcd422b3572e587ee98b218ef8e8f470c9f7b2cbd86bd42bf073
+[debug] [2019-07-15T23:30:45.220Z] [uploadQueue] Retries exhausted for task b92449c12e5a08fc974c42ebcab973e08e4d411bf746f160d192a98596e73c58:
+[debug] [2019-07-15T23:30:45.223Z] [hosting][upload queue][FINAL]
+[debug] [2019-07-15T23:30:54.813Z] [uploadQueue] Retrying task df9bf1652ee699c8d1d40dd841e6b273eca73529383258af27e7b8819f6d13c2
+[debug] [2019-07-15T23:30:59.801Z] [uploadQueue] Retries exhausted for task db3779295bf6b6db88c7f7b367b73d27f5f1fc99e7f5dcc745e2851d522c44ad:
+[debug] [2019-07-15T23:31:13.545Z] Error: ESOCKETTIMEDOUT
+    at ClientRequest.<anonymous> (C:\Users\Jesse\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:816:19)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:106:13)
+    at ClientRequest.emit (events.js:208:7)
+    at TLSSocket.emitTimeout (_http_client.js:706:34)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:106:13)
+    at TLSSocket.emit (events.js:208:7)
+    at TLSSocket.Socket._onTimeout (net.js:410:8)
+    at ontimeout (timers.js:498:11)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-07-16T00:11:36.753Z] ----------------------------------------------------------------------
+[debug] [2019-07-16T00:11:36.756Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jesse\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-07-16T00:11:36.757Z] CLI Version:   6.7.1
+[debug] [2019-07-16T00:11:36.757Z] Platform:      win32
+[debug] [2019-07-16T00:11:36.757Z] Node Version:  v8.11.3
+[debug] [2019-07-16T00:11:36.758Z] Time:          Tue Jul 16 2019 02:11:36 GMT+0200 (South Africa Standard Time)
+[debug] [2019-07-16T00:11:36.759Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-16T00:11:36.769Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-16T00:11:36.770Z] > authorizing via signed-in user
+[debug] [2019-07-16T00:11:36.770Z] [iam] checking project tailwindpowered for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2019-07-16T00:11:36.772Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-16T00:11:36.772Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-16T00:11:37.373Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-16T00:11:37.509Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/tailwindpowered:testIamPermissions  
+
+[debug] [2019-07-16T00:11:39.626Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-16T00:11:39.627Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/tailwindpowered  
+ 
+[debug] [2019-07-16T00:11:40.364Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'tailwindpowered'...
+[info] 
+[info] i  deploying database, storage, firestore, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-07-16T00:11:40.377Z] >>> HTTP REQUEST PUT https://tailwindpowered.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2019-07-16T00:11:41.673Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database tailwindpowered is valid
+[debug] [2019-07-16T00:11:41.676Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/tailwindpowered  
+ 
+[debug] [2019-07-16T00:11:44.186Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2019-07-16T00:11:44.188Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/tailwindpowered:test  
+
+[debug] [2019-07-16T00:11:45.432Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[info] i  firestore: reading indexes from firestore.indexes.json...
+[debug] [2019-07-16T00:11:45.437Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/tailwindpowered:test  
+
+[debug] [2019-07-16T00:11:46.408Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2019-07-16T00:11:46.411Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/tailwindpowered/versions  
+
+[debug] [2019-07-16T00:11:49.106Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2019-07-16T00:11:49.108Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/tailwindpowered/rulesets  
+
+[debug] [2019-07-16T00:11:50.248Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-16T00:11:50.248Z] [rules] created ruleset projects/tailwindpowered/rulesets/8caa97d6-204a-4081-a501-90d39f665dba
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2019-07-16T00:11:50.250Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/tailwindpowered/rulesets  
+
+[debug] [2019-07-16T00:11:50.251Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/tailwindpowered/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2019-07-16T00:11:50.847Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-16T00:11:50.847Z] [rules] created ruleset projects/tailwindpowered/rulesets/d149f16c-12f4-4ec8-8a3e-afae54271807
+[debug] [2019-07-16T00:11:52.356Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-16T00:11:52.358Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/tailwindpowered/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2019-07-16T00:11:54.218Z] <<< HTTP RESPONSE 200
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully
+[info] i  hosting[tailwindpowered]: beginning deploy...
+[info] i  hosting[tailwindpowered]: found 32 files in dist/Code-Challenge
+[debug] [2019-07-16T00:11:54.250Z] [hosting] hash cache [ZGlzdFxDb2RlLUNoYWxsZW5nZQ] load error: lines is not defined
+[debug] [2019-07-16T00:11:56.079Z] [hosting] hash cache [ZGlzdFxDb2RlLUNoYWxsZW5nZQ] stored for 32 files
+[debug] [2019-07-16T00:11:56.079Z] [hosting][hash queue][FINAL]
+[debug] [2019-07-16T00:11:56.079Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/tailwindpowered/versions/fb1fcc28cee8dae5:populateFiles  
+ <request body omitted>
+[debug] [2019-07-16T00:11:58.697Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-16T00:11:58.709Z] [hosting][populate queue][FINAL]
+[debug] [2019-07-16T00:11:58.709Z] [hosting] uploads queued: 16
+[debug] [2019-07-16T00:13:23.709Z] [uploadQueue] Retrying task a3763fa7c7f34b63aa4304207465ae51bed353c0e0351ea9c253104cdc8225c5
+[debug] [2019-07-16T00:13:28.787Z] [uploadQueue] Retrying task bb555f730ee2ea73df1bbfbcc26e036e230caaf6c5d20e9ce06112c7c435f249
+[debug] [2019-07-16T00:13:45.866Z] [uploadQueue] Retrying task bb555f730ee2ea73df1bbfbcc26e036e230caaf6c5d20e9ce06112c7c435f249
+[debug] [2019-07-16T00:13:58.720Z] [uploadQueue] Retrying task 1bb314bb8ea8fcd422b3572e587ee98b218ef8e8f470c9f7b2cbd86bd42bf073
+[debug] [2019-07-16T00:14:11.001Z] [uploadQueue] Retrying task f0dc7ee4cc3cd01c30d9b5c3b01f7e3c73e4af8d01c9206e7b540f58fa55e2af
+[debug] [2019-07-16T00:14:11.723Z] [uploadQueue] Retrying task 8a478b9c94ed77e8a1569db4c06fb4ab9bef388510ec1dc2a6d6ed925d06e25b
+[debug] [2019-07-16T00:15:19.574Z] [uploadQueue] Retrying task 119fb1263d99dff20580293b97009be5798c621f4b812449d07d46142b232ded
+[debug] [2019-07-16T00:16:06.119Z] [uploadQueue] Retrying task 726f57badf09a23a302e6b9fbe6cb4339091a6dfd328f5c7c2167a35ebf2b7de
+[debug] [2019-07-16T00:17:16.512Z] [uploadQueue] Retrying task 247513fb29dfe4eeb0f88c1875c734b4fd0e5337e2073140ef3a9e85fb5c1ac1
+[debug] [2019-07-16T00:17:36.646Z] [uploadQueue] Retrying task 247513fb29dfe4eeb0f88c1875c734b4fd0e5337e2073140ef3a9e85fb5c1ac1
+[debug] [2019-07-16T00:17:40.300Z] [uploadQueue] Retrying task df9bf1652ee699c8d1d40dd841e6b273eca73529383258af27e7b8819f6d13c2
+[debug] [2019-07-16T00:17:47.496Z] [uploadQueue] Retrying task 119fb1263d99dff20580293b97009be5798c621f4b812449d07d46142b232ded
+[debug] [2019-07-16T00:18:11.412Z] [uploadQueue] Retrying task 1bb314bb8ea8fcd422b3572e587ee98b218ef8e8f470c9f7b2cbd86bd42bf073
+[debug] [2019-07-16T00:18:33.004Z] [uploadQueue] Retrying task 119fb1263d99dff20580293b97009be5798c621f4b812449d07d46142b232ded
